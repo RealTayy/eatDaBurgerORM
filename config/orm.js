@@ -30,7 +30,17 @@ var orm = {
                 if (callback) callback(result);
             }
         )
+    },
+    deleteOne: function (tableOne, colOne, valOne, callback) {
+        connection.query(
+            'DELETE FROM ?? WHERE ?? = ?',
+            [tableOne, colOne, valOne],
+            function (err, result) {
+                if (err) throw err;
+                if (callback) callback(result);
+            }
+        )
     }
 };
 
-module.exports = orm;   
+module.exports = orm;
