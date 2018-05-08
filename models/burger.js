@@ -14,3 +14,5 @@ var burger = {
         orm.deleteOne('burgers', 'id', id);
     }
 };
+
+module.exports = burger;
