@@ -1,0 +1,15 @@
+<h2>Not Devoured </h2>
+{{#each burgers}} {{#unless devoured}}
+<div>
+    {{ id }} {{ name }} {{ devoured }}
+    <button class='devour-btn' data-id={{ id }}>Devour</button>
+</div>
+{{/unless}} {{/each}}
+
+<h2>Is Devoured </h2>
+{{#each burgers}} {{#if devoured}}
+<div>
+    {{ id }} {{ name }} {{ devoured }}
+    <button class='undevour-btn' data-id={{ id }}>Undevour</button>
+</div>
+{{/if}} {{/each}}

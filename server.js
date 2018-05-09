@@ -17,13 +17,13 @@ app.use(bodyParser.json());
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// Set up static public directories
-var directoryPublic = path.join(__dirname, 'public');
-app.use(express.static(directoryPublic));
-
 // Set up Routes/Controllers
 var directoryControllers = path.join(__dirname, 'controllers');
 app.use('/', require(path.join(directoryControllers, 'burgers_controller.js')));
+
+// Set up static public directories
+var directoryPublic = path.join(__dirname, 'public');
+app.use(express.static(directoryPublic));
 
 // Start server and begin to listen on PORT
 app.listen(PORT, function () {
